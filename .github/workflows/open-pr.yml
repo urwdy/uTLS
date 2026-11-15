@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pull-requests: write
 
 concurrency:
@@ -35,13 +35,21 @@ jobs:
             exit 0
           fi
           existing="$(gh pr list --repo "$GITHUB_REPOSITORY" --base main --head develop --state open --json number --jq '.[0].number')"
-          if [ -n "$existing" ]; then
-            echo "PR #$existing is already open"
-            exit 0
+          if [ -z "$existing" ]; then
+            gh pr create \
+              --repo "$GITHUB_REPOSITORY" \
+              --base main \
+              --head develop \
+              --title "chore: sync develop into main" \
+              --body "Automated PR from develop. CI and build checks must pass before auto-merge."
+            existing="$(gh pr list --repo "$GITHUB_REPOSITORY" --base main --head develop --state open --json number --jq '.[0].number')"
           fi
-          gh pr create \
-            --repo "$GITHUB_REPOSITORY" \
-            --base main \
-            --head develop \
-            --title "chore: sync develop into main" \
-            --body "Automated PR from develop. CI and build checks must pass before auto-merge."
+          if [ -z "$existing" ]; then
+            echo "could not find or create develop -> main PR"
+            exit 1
+          fi
+          state="$(gh pr view "$existing" --repo "$GITHUB_REPOSITORY" --json autoMergeRequest --jq 'if (.autoMergeRequest == null) then "none" else "enabled" end')"
+          if [ "$state" = "none" ]; then
+            gh pr merge "$existing" --repo "$GITHUB_REPOSITORY" --auto --merge
+          fi
+          echo "PR #$existing is open with auto-merge enabled"
