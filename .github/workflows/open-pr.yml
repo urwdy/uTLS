@@ -1,0 +1,47 @@
+name: Open Develop PR
+
+on:
+  push:
+    branches: [develop]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: open-develop-pr
+  cancel-in-progress: false
+
+jobs:
+  open-pr:
+    name: Create develop -> main PR
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Checkout develop
+        uses: actions/checkout@v7.0.1
+        with:
+          ref: develop
+          fetch-depth: 0
+
+      - name: Create PR if needed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git fetch origin main
+          if git diff --quiet origin/main...HEAD; then
+            echo "develop has no changes relative to main"
+            exit 0
+          fi
+          existing="$(gh pr list --repo "$GITHUB_REPOSITORY" --base main --head develop --state open --json number --jq '.[0].number')"
+          if [ -n "$existing" ]; then
+            echo "PR #$existing is already open"
+            exit 0
+          fi
+          gh pr create \
+            --repo "$GITHUB_REPOSITORY" \
+            --base main \
+            --head develop \
+            --title "chore: sync develop into main" \
+            --body "Automated PR from develop. CI and build checks must pass before auto-merge."
