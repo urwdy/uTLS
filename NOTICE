@@ -1,0 +1,16 @@
+uTLS (Python) includes protocol constants, ClientHello extension definitions
+and browser fingerprint data ported from refraction-networking/utls:
+
+    https://github.com/refraction-networking/utls
+
+Copyright 2017 Google Inc. All rights reserved.
+Copyright 2017-2026 Refraction Networking and uTLS contributors.
+Use of that source code is governed by a BSD-style license that can be found
+in the upstream repository's LICENSE file.
+
+The pure-Python ML-KEM-768 implementation follows FIPS 203; its correctness is
+cross-checked against Go's crypto/mlkem in the test suite.
+
+The wildcard hostname checker bundles the Public Suffix List from
+https://publicsuffix.org/ (Mozilla Public License 2.0).  The original license
+header is retained in utls/_public_suffix_list.dat.

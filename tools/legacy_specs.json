@@ -1,0 +1,2408 @@
+{
+  "Chrome-100": {
+    "cipher_suites": [
+      2570,
+      4865,
+      4866,
+      4867,
+      49195,
+      49199,
+      49196,
+      49200,
+      52393,
+      52392,
+      49171,
+      49172,
+      156,
+      157,
+      47,
+      53
+    ],
+    "compression_methods": [
+      0
+    ],
+    "extensions": [
+      {
+        "type": "grease"
+      },
+      {
+        "type": "sni"
+      },
+      {
+        "type": "ems"
+      },
+      {
+        "mode": 1,
+        "type": "renegotiation"
+      },
+      {
+        "groups": [
+          2570,
+          29,
+          23,
+          24
+        ],
+        "type": "supported_groups"
+      },
+      {
+        "points": "00",
+        "type": "supported_points"
+      },
+      {
+        "type": "session_ticket"
+      },
+      {
+        "protocols": [
+          "h2",
+          "http/1.1"
+        ],
+        "type": "alpn"
+      },
+      {
+        "type": "status_request"
+      },
+      {
+        "algorithms": [
+          1027,
+          2052,
+          1025,
+          1283,
+          2053,
+          1281,
+          2054,
+          1537
+        ],
+        "type": "signature_algorithms"
+      },
+      {
+        "type": "sct"
+      },
+      {
+        "shares": [
+          {
+            "group": 2570,
+            "len": 1
+          },
+          {
+            "group": 29,
+            "len": 0
+          }
+        ],
+        "type": "key_share"
+      },
+      {
+        "modes": [
+          1
+        ],
+        "type": "psk_modes"
+      },
+      {
+        "type": "supported_versions",
+        "versions": [
+          2570,
+          772,
+          771
+        ]
+      },
+      {
+        "algorithms": [
+          2
+        ],
+        "type": "compress_certificate"
+      },
+      {
+        "protocols": [
+          "h2"
+        ],
+        "type": "alps"
+      },
+      {
+        "type": "grease"
+      },
+      {
+        "dynamic": true,
+        "length": 0,
+        "type": "padding"
+      }
+    ],
+    "max_vers": 0,
+    "min_vers": 0
+  },
+  "Chrome-102": {
+    "cipher_suites": [
+      2570,
+      4865,
+      4866,
+      4867,
+      49195,
+      49199,
+      49196,
+      49200,
+      52393,
+      52392,
+      49171,
+      49172,
+      156,
+      157,
+      47,
+      53
+    ],
+    "compression_methods": [
+      0
+    ],
+    "extensions": [
+      {
+        "type": "grease"
+      },
+      {
+        "type": "sni"
+      },
+      {
+        "type": "ems"
+      },
+      {
+        "mode": 1,
+        "type": "renegotiation"
+      },
+      {
+        "groups": [
+          2570,
+          29,
+          23,
+          24
+        ],
+        "type": "supported_groups"
+      },
+      {
+        "points": "00",
+        "type": "supported_points"
+      },
+      {
+        "type": "session_ticket"
+      },
+      {
+        "protocols": [
+          "h2",
+          "http/1.1"
+        ],
+        "type": "alpn"
+      },
+      {
+        "type": "status_request"
+      },
+      {
+        "algorithms": [
+          1027,
+          2052,
+          1025,
+          1283,
+          2053,
+          1281,
+          2054,
+          1537
+        ],
+        "type": "signature_algorithms"
+      },
+      {
+        "type": "sct"
+      },
+      {
+        "shares": [
+          {
+            "group": 2570,
+            "len": 1
+          },
+          {
+            "group": 29,
+            "len": 0
+          }
+        ],
+        "type": "key_share"
+      },
+      {
+        "modes": [
+          1
+        ],
+        "type": "psk_modes"
+      },
+      {
+        "type": "supported_versions",
+        "versions": [
+          2570,
+          772,
+          771
+        ]
+      },
+      {
+        "algorithms": [
+          2
+        ],
+        "type": "compress_certificate"
+      },
+      {
+        "protocols": [
+          "h2"
+        ],
+        "type": "alps"
+      },
+      {
+        "type": "grease"
+      },
+      {
+        "dynamic": true,
+        "length": 0,
+        "type": "padding"
+      }
+    ],
+    "max_vers": 0,
+    "min_vers": 0
+  },
+  "Chrome-106": {
+    "cipher_suites": [
+      2570,
+      4865,
+      4866,
+      4867,
+      49195,
+      49199,
+      49196,
+      49200,
+      52393,
+      52392,
+      49171,
+      49172,
+      156,
+      157,
+      47,
+      53
+    ],
+    "compression_methods": [
+      0
+    ],
+    "extensions": [
+      {
+        "type": "grease"
+      },
+      {
+        "algorithms": [
+          1027,
+          2052,
+          1025,
+          1283,
+          2053,
+          1281,
+          2054,
+          1537
+        ],
+        "type": "signature_algorithms"
+      },
+      {
+        "type": "ems"
+      },
+      {
+        "type": "supported_versions",
+        "versions": [
+          2570,
+          772,
+          771
+        ]
+      },
+      {
+        "protocols": [
+          "h2"
+        ],
+        "type": "alps"
+      },
+      {
+        "modes": [
+          1
+        ],
+        "type": "psk_modes"
+      },
+      {
+        "shares": [
+          {
+            "group": 2570,
+            "len": 1
+          },
+          {
+            "group": 29,
+            "len": 0
+          }
+        ],
+        "type": "key_share"
+      },
+      {
+        "protocols": [
+          "h2",
+          "http/1.1"
+        ],
+        "type": "alpn"
+      },
+      {
+        "groups": [
+          2570,
+          29,
+          23,
+          24
+        ],
+        "type": "supported_groups"
+      },
+      {
+        "type": "status_request"
+      },
+      {
+        "type": "sct"
+      },
+      {
+        "points": "00",
+        "type": "supported_points"
+      },
+      {
+        "mode": 1,
+        "type": "renegotiation"
+      },
+      {
+        "type": "session_ticket"
+      },
+      {
+        "type": "sni"
+      },
+      {
+        "algorithms": [
+          2
+        ],
+        "type": "compress_certificate"
+      },
+      {
+        "type": "grease"
+      },
+      {
+        "dynamic": true,
+        "length": 0,
+        "type": "padding"
+      }
+    ],
+    "max_vers": 0,
+    "min_vers": 0
+  },
+  "Chrome-115PQ": {
+    "cipher_suites": [
+      2570,
+      4865,
+      4866,
+      4867,
+      49195,
+      49199,
+      49196,
+      49200,
+      52393,
+      52392,
+      49171,
+      49172,
+      156,
+      157,
+      47,
+      53
+    ],
+    "compression_methods": [
+      0
+    ],
+    "extensions": [
+      {
+        "type": "grease"
+      },
+      {
+        "type": "sct"
+      },
+      {
+        "points": "00",
+        "type": "supported_points"
+      },
+      {
+        "modes": [
+          1
+        ],
+        "type": "psk_modes"
+      },
+      {
+        "shares": [
+          {
+            "group": 2570,
+            "len": 1
+          },
+          {
+            "group": 25497,
+            "len": 0
+          },
+          {
+            "group": 29,
+            "len": 0
+          }
+        ],
+        "type": "key_share"
+      },
+      {
+        "groups": [
+          2570,
+          25497,
+          29,
+          23,
+          24
+        ],
+        "type": "supported_groups"
+      },
+      {
+        "algorithms": [
+          1027,
+          2052,
+          1025,
+          1283,
+          2053,
+          1281,
+          2054,
+          1537
+        ],
+        "type": "signature_algorithms"
+      },
+      {
+        "type": "status_request"
+      },
+      {
+        "type": "sni"
+      },
+      {
+        "type": "ems"
+      },
+      {
+        "protocols": [
+          "h2"
+        ],
+        "type": "alps"
+      },
+      {
+        "mode": 1,
+        "type": "renegotiation"
+      },
+      {
+        "type": "session_ticket"
+      },
+      {
+        "protocols": [
+          "h2",
+          "http/1.1"
+        ],
+        "type": "alpn"
+      },
+      {
+        "algorithms": [
+          2
+        ],
+        "type": "compress_certificate"
+      },
+      {
+        "type": "supported_versions",
+        "versions": [
+          2570,
+          772,
+          771
+        ]
+      },
+      {
+        "type": "grease"
+      },
+      {
+        "dynamic": true,
+        "length": 0,
+        "type": "padding"
+      }
+    ],
+    "max_vers": 0,
+    "min_vers": 0
+  },
+  "Chrome-120PQ": {
+    "cipher_suites": [
+      2570,
+      4865,
+      4866,
+      4867,
+      49195,
+      49199,
+      49196,
+      49200,
+      52393,
+      52392,
+      49171,
+      49172,
+      156,
+      157,
+      47,
+      53
+    ],
+    "compression_methods": [
+      0
+    ],
+    "extensions": [
+      {
+        "type": "grease"
+      },
+      {
+        "payload_lens": [
+          128,
+          160,
+          192,
+          224
+        ],
+        "suites": [
+          [
+            1,
+            1
+          ]
+        ],
+        "type": "ech"
+      },
+      {
+        "type": "ems"
+      },
+      {
+        "type": "sni"
+      },
+      {
+        "mode": 1,
+        "type": "renegotiation"
+      },
+      {
+        "type": "sct"
+      },
+      {
+        "algorithms": [
+          1027,
+          2052,
+          1025,
+          1283,
+          2053,
+          1281,
+          2054,
+          1537
+        ],
+        "type": "signature_algorithms"
+      },
+      {
+        "algorithms": [
+          2
+        ],
+        "type": "compress_certificate"
+      },
+      {
+        "points": "00",
+        "type": "supported_points"
+      },
+      {
+        "groups": [
+          2570,
+          25497,
+          29,
+          23,
+          24
+        ],
+        "type": "supported_groups"
+      },
+      {
+        "type": "status_request"
+      },
+      {
+        "shares": [
+          {
+            "group": 2570,
+            "len": 1
+          },
+          {
+            "group": 25497,
+            "len": 0
+          },
+          {
+            "group": 29,
+            "len": 0
+          }
+        ],
+        "type": "key_share"
+      },
+      {
+        "type": "supported_versions",
+        "versions": [
+          2570,
+          772,
+          771
+        ]
+      },
+      {
+        "type": "session_ticket"
+      },
+      {
+        "protocols": [
+          "h2",
+          "http/1.1"
+        ],
+        "type": "alpn"
+      },
+      {
+        "protocols": [
+          "h2"
+        ],
+        "type": "alps"
+      },
+      {
+        "modes": [
+          1
+        ],
+        "type": "psk_modes"
+      },
+      {
+        "type": "grease"
+      }
+    ],
+    "max_vers": 0,
+    "min_vers": 0
+  },
+  "Chrome-58": {
+    "cipher_suites": [
+      2570,
+      49195,
+      49199,
+      49196,
+      49200,
+      52393,
+      52392,
+      49171,
+      49172,
+      156,
+      157,
+      47,
+      53,
+      10
+    ],
+    "compression_methods": [
+      0
+    ],
+    "extensions": [
+      {
+        "type": "grease"
+      },
+      {
+        "mode": 1,
+        "type": "renegotiation"
+      },
+      {
+        "type": "sni"
+      },
+      {
+        "type": "ems"
+      },
+      {
+        "type": "session_ticket"
+      },
+      {
+        "algorithms": [
+          1027,
+          2052,
+          1025,
+          1283,
+          2053,
+          1281,
+          2054,
+          1537,
+          513
+        ],
+        "type": "signature_algorithms"
+      },
+      {
+        "type": "status_request"
+      },
+      {
+        "type": "sct"
+      },
+      {
+        "protocols": [
+          "h2",
+          "http/1.1"
+        ],
+        "type": "alpn"
+      },
+      {
+        "old": false,
+        "type": "channel_id"
+      },
+      {
+        "points": "00",
+        "type": "supported_points"
+      },
+      {
+        "groups": [
+          2570,
+          29,
+          23,
+          24
+        ],
+        "type": "supported_groups"
+      },
+      {
+        "type": "grease"
+      },
+      {
+        "dynamic": true,
+        "length": 0,
+        "type": "padding"
+      }
+    ],
+    "max_vers": 771,
+    "min_vers": 769
+  },
+  "Chrome-70": {
+    "cipher_suites": [
+      2570,
+      4865,
+      4866,
+      4867,
+      49195,
+      49199,
+      49196,
+      49200,
+      52393,
+      52392,
+      49171,
+      49172,
+      156,
+      157,
+      47,
+      53,
+      10
+    ],
+    "compression_methods": [
+      0
+    ],
+    "extensions": [
+      {
+        "type": "grease"
+      },
+      {
+        "mode": 1,
+        "type": "renegotiation"
+      },
+      {
+        "type": "sni"
+      },
+      {
+        "type": "ems"
+      },
+      {
+        "type": "session_ticket"
+      },
+      {
+        "algorithms": [
+          1027,
+          2052,
+          1025,
+          1283,
+          2053,
+          1281,
+          2054,
+          1537,
+          513
+        ],
+        "type": "signature_algorithms"
+      },
+      {
+        "type": "status_request"
+      },
+      {
+        "type": "sct"
+      },
+      {
+        "protocols": [
+          "h2",
+          "http/1.1"
+        ],
+        "type": "alpn"
+      },
+      {
+        "old": false,
+        "type": "channel_id"
+      },
+      {
+        "points": "00",
+        "type": "supported_points"
+      },
+      {
+        "shares": [
+          {
+            "group": 2570,
+            "len": 1
+          },
+          {
+            "group": 29,
+            "len": 0
+          }
+        ],
+        "type": "key_share"
+      },
+      {
+        "modes": [
+          1
+        ],
+        "type": "psk_modes"
+      },
+      {
+        "type": "supported_versions",
+        "versions": [
+          2570,
+          772,
+          771,
+          770,
+          769
+        ]
+      },
+      {
+        "groups": [
+          2570,
+          29,
+          23,
+          24
+        ],
+        "type": "supported_groups"
+      },
+      {
+        "algorithms": [
+          2
+        ],
+        "type": "compress_certificate"
+      },
+      {
+        "type": "grease"
+      },
+      {
+        "dynamic": true,
+        "length": 0,
+        "type": "padding"
+      }
+    ],
+    "max_vers": 772,
+    "min_vers": 769
+  },
+  "Chrome-72": {
+    "cipher_suites": [
+      2570,
+      4865,
+      4866,
+      4867,
+      49195,
+      49199,
+      49196,
+      49200,
+      52393,
+      52392,
+      49171,
+      49172,
+      156,
+      157,
+      47,
+      53,
+      10
+    ],
+    "compression_methods": [
+      0
+    ],
+    "extensions": [
+      {
+        "type": "grease"
+      },
+      {
+        "type": "sni"
+      },
+      {
+        "type": "ems"
+      },
+      {
+        "mode": 1,
+        "type": "renegotiation"
+      },
+      {
+        "groups": [
+          2570,
+          29,
+          23,
+          24
+        ],
+        "type": "supported_groups"
+      },
+      {
+        "points": "00",
+        "type": "supported_points"
+      },
+      {
+        "type": "session_ticket"
+      },
+      {
+        "protocols": [
+          "h2",
+          "http/1.1"
+        ],
+        "type": "alpn"
+      },
+      {
+        "type": "status_request"
+      },
+      {
+        "algorithms": [
+          1027,
+          2052,
+          1025,
+          1283,
+          2053,
+          1281,
+          2054,
+          1537,
+          513
+        ],
+        "type": "signature_algorithms"
+      },
+      {
+        "type": "sct"
+      },
+      {
+        "shares": [
+          {
+            "group": 2570,
+            "len": 1
+          },
+          {
+            "group": 29,
+            "len": 0
+          }
+        ],
+        "type": "key_share"
+      },
+      {
+        "modes": [
+          1
+        ],
+        "type": "psk_modes"
+      },
+      {
+        "type": "supported_versions",
+        "versions": [
+          2570,
+          772,
+          771,
+          770,
+          769
+        ]
+      },
+      {
+        "algorithms": [
+          2
+        ],
+        "type": "compress_certificate"
+      },
+      {
+        "type": "grease"
+      },
+      {
+        "dynamic": true,
+        "length": 0,
+        "type": "padding"
+      }
+    ],
+    "max_vers": 0,
+    "min_vers": 0
+  },
+  "Chrome-83": {
+    "cipher_suites": [
+      2570,
+      4865,
+      4866,
+      4867,
+      49195,
+      49199,
+      49196,
+      49200,
+      52393,
+      52392,
+      49171,
+      49172,
+      156,
+      157,
+      47,
+      53
+    ],
+    "compression_methods": [
+      0
+    ],
+    "extensions": [
+      {
+        "type": "grease"
+      },
+      {
+        "type": "sni"
+      },
+      {
+        "type": "ems"
+      },
+      {
+        "mode": 1,
+        "type": "renegotiation"
+      },
+      {
+        "groups": [
+          2570,
+          29,
+          23,
+          24
+        ],
+        "type": "supported_groups"
+      },
+      {
+        "points": "00",
+        "type": "supported_points"
+      },
+      {
+        "type": "session_ticket"
+      },
+      {
+        "protocols": [
+          "h2",
+          "http/1.1"
+        ],
+        "type": "alpn"
+      },
+      {
+        "type": "status_request"
+      },
+      {
+        "algorithms": [
+          1027,
+          2052,
+          1025,
+          1283,
+          2053,
+          1281,
+          2054,
+          1537
+        ],
+        "type": "signature_algorithms"
+      },
+      {
+        "type": "sct"
+      },
+      {
+        "shares": [
+          {
+            "group": 2570,
+            "len": 1
+          },
+          {
+            "group": 29,
+            "len": 0
+          }
+        ],
+        "type": "key_share"
+      },
+      {
+        "modes": [
+          1
+        ],
+        "type": "psk_modes"
+      },
+      {
+        "type": "supported_versions",
+        "versions": [
+          2570,
+          772,
+          771,
+          770,
+          769
+        ]
+      },
+      {
+        "algorithms": [
+          2
+        ],
+        "type": "compress_certificate"
+      },
+      {
+        "type": "grease"
+      },
+      {
+        "dynamic": true,
+        "length": 0,
+        "type": "padding"
+      }
+    ],
+    "max_vers": 0,
+    "min_vers": 0
+  },
+  "Chrome-87": {
+    "cipher_suites": [
+      2570,
+      4865,
+      4866,
+      4867,
+      49195,
+      49199,
+      49196,
+      49200,
+      52393,
+      52392,
+      49171,
+      49172,
+      156,
+      157,
+      47,
+      53
+    ],
+    "compression_methods": [
+      0
+    ],
+    "extensions": [
+      {
+        "type": "grease"
+      },
+      {
+        "type": "sni"
+      },
+      {
+        "type": "ems"
+      },
+      {
+        "mode": 1,
+        "type": "renegotiation"
+      },
+      {
+        "groups": [
+          2570,
+          29,
+          23,
+          24
+        ],
+        "type": "supported_groups"
+      },
+      {
+        "points": "00",
+        "type": "supported_points"
+      },
+      {
+        "type": "session_ticket"
+      },
+      {
+        "protocols": [
+          "h2",
+          "http/1.1"
+        ],
+        "type": "alpn"
+      },
+      {
+        "type": "status_request"
+      },
+      {
+        "algorithms": [
+          1027,
+          2052,
+          1025,
+          1283,
+          2053,
+          1281,
+          2054,
+          1537
+        ],
+        "type": "signature_algorithms"
+      },
+      {
+        "type": "sct"
+      },
+      {
+        "shares": [
+          {
+            "group": 2570,
+            "len": 1
+          },
+          {
+            "group": 29,
+            "len": 0
+          }
+        ],
+        "type": "key_share"
+      },
+      {
+        "modes": [
+          1
+        ],
+        "type": "psk_modes"
+      },
+      {
+        "type": "supported_versions",
+        "versions": [
+          2570,
+          772,
+          771,
+          770,
+          769
+        ]
+      },
+      {
+        "algorithms": [
+          2
+        ],
+        "type": "compress_certificate"
+      },
+      {
+        "type": "grease"
+      },
+      {
+        "dynamic": true,
+        "length": 0,
+        "type": "padding"
+      }
+    ],
+    "max_vers": 0,
+    "min_vers": 0
+  },
+  "Chrome-96": {
+    "cipher_suites": [
+      2570,
+      4865,
+      4866,
+      4867,
+      49195,
+      49199,
+      49196,
+      49200,
+      52393,
+      52392,
+      49171,
+      49172,
+      156,
+      157,
+      47,
+      53
+    ],
+    "compression_methods": [
+      0
+    ],
+    "extensions": [
+      {
+        "type": "grease"
+      },
+      {
+        "type": "sni"
+      },
+      {
+        "type": "ems"
+      },
+      {
+        "mode": 1,
+        "type": "renegotiation"
+      },
+      {
+        "groups": [
+          2570,
+          29,
+          23,
+          24
+        ],
+        "type": "supported_groups"
+      },
+      {
+        "points": "00",
+        "type": "supported_points"
+      },
+      {
+        "type": "session_ticket"
+      },
+      {
+        "protocols": [
+          "h2",
+          "http/1.1"
+        ],
+        "type": "alpn"
+      },
+      {
+        "type": "status_request"
+      },
+      {
+        "algorithms": [
+          1027,
+          2052,
+          1025,
+          1283,
+          2053,
+          1281,
+          2054,
+          1537
+        ],
+        "type": "signature_algorithms"
+      },
+      {
+        "type": "sct"
+      },
+      {
+        "shares": [
+          {
+            "group": 2570,
+            "len": 1
+          },
+          {
+            "group": 29,
+            "len": 0
+          }
+        ],
+        "type": "key_share"
+      },
+      {
+        "modes": [
+          1
+        ],
+        "type": "psk_modes"
+      },
+      {
+        "type": "supported_versions",
+        "versions": [
+          2570,
+          772,
+          771,
+          770,
+          769
+        ]
+      },
+      {
+        "algorithms": [
+          2
+        ],
+        "type": "compress_certificate"
+      },
+      {
+        "protocols": [
+          "h2"
+        ],
+        "type": "alps"
+      },
+      {
+        "type": "grease"
+      },
+      {
+        "dynamic": true,
+        "length": 0,
+        "type": "padding"
+      }
+    ],
+    "max_vers": 0,
+    "min_vers": 0
+  },
+  "Edge-85": {
+    "cipher_suites": [
+      2570,
+      4865,
+      4866,
+      4867,
+      49195,
+      49199,
+      49196,
+      49200,
+      52393,
+      52392,
+      49171,
+      49172,
+      156,
+      157,
+      47,
+      53
+    ],
+    "compression_methods": [
+      0
+    ],
+    "extensions": [
+      {
+        "type": "grease"
+      },
+      {
+        "type": "sni"
+      },
+      {
+        "type": "ems"
+      },
+      {
+        "mode": 1,
+        "type": "renegotiation"
+      },
+      {
+        "groups": [
+          2570,
+          29,
+          23,
+          24
+        ],
+        "type": "supported_groups"
+      },
+      {
+        "points": "00",
+        "type": "supported_points"
+      },
+      {
+        "type": "session_ticket"
+      },
+      {
+        "protocols": [
+          "h2",
+          "http/1.1"
+        ],
+        "type": "alpn"
+      },
+      {
+        "type": "status_request"
+      },
+      {
+        "algorithms": [
+          1027,
+          2052,
+          1025,
+          1283,
+          2053,
+          1281,
+          2054,
+          1537
+        ],
+        "type": "signature_algorithms"
+      },
+      {
+        "type": "sct"
+      },
+      {
+        "shares": [
+          {
+            "group": 2570,
+            "len": 1
+          },
+          {
+            "group": 29,
+            "len": 0
+          }
+        ],
+        "type": "key_share"
+      },
+      {
+        "modes": [
+          1
+        ],
+        "type": "psk_modes"
+      },
+      {
+        "type": "supported_versions",
+        "versions": [
+          2570,
+          772,
+          771,
+          770,
+          769
+        ]
+      },
+      {
+        "algorithms": [
+          2
+        ],
+        "type": "compress_certificate"
+      },
+      {
+        "type": "grease"
+      },
+      {
+        "dynamic": true,
+        "length": 0,
+        "type": "padding"
+      }
+    ],
+    "max_vers": 0,
+    "min_vers": 0
+  },
+  "Firefox-102": {
+    "cipher_suites": [
+      4865,
+      4867,
+      4866,
+      49195,
+      49199,
+      52393,
+      52392,
+      49196,
+      49200,
+      49162,
+      49161,
+      49171,
+      49172,
+      156,
+      157,
+      47,
+      53
+    ],
+    "compression_methods": [
+      0
+    ],
+    "extensions": [
+      {
+        "type": "sni"
+      },
+      {
+        "type": "ems"
+      },
+      {
+        "mode": 1,
+        "type": "renegotiation"
+      },
+      {
+        "groups": [
+          29,
+          23,
+          24,
+          25,
+          256,
+          257
+        ],
+        "type": "supported_groups"
+      },
+      {
+        "points": "00",
+        "type": "supported_points"
+      },
+      {
+        "type": "session_ticket"
+      },
+      {
+        "protocols": [
+          "h2"
+        ],
+        "type": "alpn"
+      },
+      {
+        "type": "status_request"
+      },
+      {
+        "algorithms": [
+          1027,
+          1283,
+          1539,
+          515
+        ],
+        "type": "delegated_credentials"
+      },
+      {
+        "shares": [
+          {
+            "group": 29,
+            "len": 0
+          },
+          {
+            "group": 23,
+            "len": 0
+          }
+        ],
+        "type": "key_share"
+      },
+      {
+        "type": "supported_versions",
+        "versions": [
+          772,
+          771
+        ]
+      },
+      {
+        "algorithms": [
+          1027,
+          1283,
+          1539,
+          2052,
+          2053,
+          2054,
+          1025,
+          1281,
+          1537,
+          515,
+          513
+        ],
+        "type": "signature_algorithms"
+      },
+      {
+        "modes": [
+          1
+        ],
+        "type": "psk_modes"
+      },
+      {
+        "limit": 16385,
+        "type": "record_size_limit"
+      },
+      {
+        "dynamic": true,
+        "length": 0,
+        "type": "padding"
+      }
+    ],
+    "max_vers": 772,
+    "min_vers": 769
+  },
+  "Firefox-105": {
+    "cipher_suites": [
+      4865,
+      4867,
+      4866,
+      49195,
+      49199,
+      52393,
+      52392,
+      49196,
+      49200,
+      49162,
+      49161,
+      49171,
+      49172,
+      156,
+      157,
+      47,
+      53
+    ],
+    "compression_methods": [
+      0
+    ],
+    "extensions": [
+      {
+        "type": "sni"
+      },
+      {
+        "type": "ems"
+      },
+      {
+        "mode": 1,
+        "type": "renegotiation"
+      },
+      {
+        "groups": [
+          29,
+          23,
+          24,
+          25,
+          256,
+          257
+        ],
+        "type": "supported_groups"
+      },
+      {
+        "points": "00",
+        "type": "supported_points"
+      },
+      {
+        "type": "session_ticket"
+      },
+      {
+        "protocols": [
+          "h2",
+          "http/1.1"
+        ],
+        "type": "alpn"
+      },
+      {
+        "type": "status_request"
+      },
+      {
+        "algorithms": [
+          1027,
+          1283,
+          1539,
+          515
+        ],
+        "type": "delegated_credentials"
+      },
+      {
+        "shares": [
+          {
+            "group": 29,
+            "len": 0
+          },
+          {
+            "group": 23,
+            "len": 0
+          }
+        ],
+        "type": "key_share"
+      },
+      {
+        "type": "supported_versions",
+        "versions": [
+          772,
+          771
+        ]
+      },
+      {
+        "algorithms": [
+          1027,
+          1283,
+          1539,
+          2052,
+          2053,
+          2054,
+          1025,
+          1281,
+          1537,
+          515,
+          513
+        ],
+        "type": "signature_algorithms"
+      },
+      {
+        "modes": [
+          1
+        ],
+        "type": "psk_modes"
+      },
+      {
+        "limit": 16385,
+        "type": "record_size_limit"
+      },
+      {
+        "dynamic": true,
+        "length": 0,
+        "type": "padding"
+      }
+    ],
+    "max_vers": 772,
+    "min_vers": 771
+  },
+  "Firefox-55": {
+    "cipher_suites": [
+      49195,
+      49199,
+      52393,
+      52392,
+      49196,
+      49200,
+      49162,
+      49161,
+      49171,
+      49172,
+      51,
+      57,
+      47,
+      53,
+      10
+    ],
+    "compression_methods": [
+      0
+    ],
+    "extensions": [
+      {
+        "type": "sni"
+      },
+      {
+        "type": "ems"
+      },
+      {
+        "mode": 1,
+        "type": "renegotiation"
+      },
+      {
+        "groups": [
+          29,
+          23,
+          24,
+          25
+        ],
+        "type": "supported_groups"
+      },
+      {
+        "points": "00",
+        "type": "supported_points"
+      },
+      {
+        "type": "session_ticket"
+      },
+      {
+        "protocols": [
+          "h2",
+          "http/1.1"
+        ],
+        "type": "alpn"
+      },
+      {
+        "type": "status_request"
+      },
+      {
+        "algorithms": [
+          1027,
+          1283,
+          1539,
+          2052,
+          2053,
+          2054,
+          1025,
+          1281,
+          1537,
+          515,
+          513
+        ],
+        "type": "signature_algorithms"
+      },
+      {
+        "dynamic": true,
+        "length": 0,
+        "type": "padding"
+      }
+    ],
+    "max_vers": 771,
+    "min_vers": 769
+  },
+  "Firefox-63": {
+    "cipher_suites": [
+      4865,
+      4867,
+      4866,
+      49195,
+      49199,
+      52393,
+      52392,
+      49196,
+      49200,
+      49162,
+      49161,
+      49171,
+      49172,
+      51,
+      57,
+      47,
+      53,
+      10
+    ],
+    "compression_methods": [
+      0
+    ],
+    "extensions": [
+      {
+        "type": "sni"
+      },
+      {
+        "type": "ems"
+      },
+      {
+        "mode": 1,
+        "type": "renegotiation"
+      },
+      {
+        "groups": [
+          29,
+          23,
+          24,
+          25,
+          256,
+          257
+        ],
+        "type": "supported_groups"
+      },
+      {
+        "points": "00",
+        "type": "supported_points"
+      },
+      {
+        "type": "session_ticket"
+      },
+      {
+        "protocols": [
+          "h2",
+          "http/1.1"
+        ],
+        "type": "alpn"
+      },
+      {
+        "type": "status_request"
+      },
+      {
+        "shares": [
+          {
+            "group": 29,
+            "len": 0
+          },
+          {
+            "group": 23,
+            "len": 0
+          }
+        ],
+        "type": "key_share"
+      },
+      {
+        "type": "supported_versions",
+        "versions": [
+          772,
+          771,
+          770,
+          769
+        ]
+      },
+      {
+        "algorithms": [
+          1027,
+          1283,
+          1539,
+          2052,
+          2053,
+          2054,
+          1025,
+          1281,
+          1537,
+          515,
+          513
+        ],
+        "type": "signature_algorithms"
+      },
+      {
+        "modes": [
+          1
+        ],
+        "type": "psk_modes"
+      },
+      {
+        "limit": 16385,
+        "type": "record_size_limit"
+      },
+      {
+        "dynamic": true,
+        "length": 0,
+        "type": "padding"
+      }
+    ],
+    "max_vers": 772,
+    "min_vers": 769
+  },
+  "Firefox-99": {
+    "cipher_suites": [
+      4865,
+      4867,
+      4866,
+      49195,
+      49199,
+      52393,
+      52392,
+      49196,
+      49200,
+      49162,
+      49161,
+      49171,
+      49172,
+      156,
+      157,
+      47,
+      53,
+      10
+    ],
+    "compression_methods": [
+      0
+    ],
+    "extensions": [
+      {
+        "type": "sni"
+      },
+      {
+        "type": "ems"
+      },
+      {
+        "mode": 1,
+        "type": "renegotiation"
+      },
+      {
+        "groups": [
+          29,
+          23,
+          24,
+          25,
+          256,
+          257
+        ],
+        "type": "supported_groups"
+      },
+      {
+        "points": "00",
+        "type": "supported_points"
+      },
+      {
+        "type": "session_ticket"
+      },
+      {
+        "protocols": [
+          "h2",
+          "http/1.1"
+        ],
+        "type": "alpn"
+      },
+      {
+        "type": "status_request"
+      },
+      {
+        "algorithms": [
+          1027,
+          1283,
+          1539,
+          515
+        ],
+        "type": "delegated_credentials"
+      },
+      {
+        "shares": [
+          {
+            "group": 29,
+            "len": 0
+          },
+          {
+            "group": 23,
+            "len": 0
+          }
+        ],
+        "type": "key_share"
+      },
+      {
+        "type": "supported_versions",
+        "versions": [
+          772,
+          771,
+          770,
+          769
+        ]
+      },
+      {
+        "algorithms": [
+          1027,
+          1283,
+          1539,
+          2052,
+          2053,
+          2054,
+          1025,
+          1281,
+          1537,
+          515,
+          513
+        ],
+        "type": "signature_algorithms"
+      },
+      {
+        "modes": [
+          1
+        ],
+        "type": "psk_modes"
+      },
+      {
+        "limit": 16385,
+        "type": "record_size_limit"
+      },
+      {
+        "dynamic": true,
+        "length": 0,
+        "type": "padding"
+      }
+    ],
+    "max_vers": 772,
+    "min_vers": 769
+  },
+  "iOS-11.1": {
+    "cipher_suites": [
+      49196,
+      49195,
+      49188,
+      49187,
+      49162,
+      49161,
+      52393,
+      49200,
+      49199,
+      49192,
+      49191,
+      49172,
+      49171,
+      52392,
+      157,
+      156,
+      61,
+      60,
+      53,
+      47
+    ],
+    "compression_methods": [
+      0
+    ],
+    "extensions": [
+      {
+        "mode": 1,
+        "type": "renegotiation"
+      },
+      {
+        "type": "sni"
+      },
+      {
+        "type": "ems"
+      },
+      {
+        "algorithms": [
+          1027,
+          2052,
+          1025,
+          1283,
+          2053,
+          1281,
+          2054,
+          1537,
+          513
+        ],
+        "type": "signature_algorithms"
+      },
+      {
+        "type": "status_request"
+      },
+      {
+        "type": "npn"
+      },
+      {
+        "type": "sct"
+      },
+      {
+        "protocols": [
+          "h2",
+          "h2-16",
+          "h2-15",
+          "h2-14",
+          "spdy/3.1",
+          "spdy/3",
+          "http/1.1"
+        ],
+        "type": "alpn"
+      },
+      {
+        "points": "00",
+        "type": "supported_points"
+      },
+      {
+        "groups": [
+          29,
+          23,
+          24,
+          25
+        ],
+        "type": "supported_groups"
+      }
+    ],
+    "max_vers": 771,
+    "min_vers": 769
+  },
+  "iOS-12.1": {
+    "cipher_suites": [
+      49196,
+      49195,
+      49188,
+      49187,
+      49162,
+      49161,
+      52393,
+      49200,
+      49199,
+      49192,
+      49191,
+      49172,
+      49171,
+      52392,
+      157,
+      156,
+      61,
+      60,
+      53,
+      47,
+      49160,
+      49170,
+      10
+    ],
+    "compression_methods": [
+      0
+    ],
+    "extensions": [
+      {
+        "mode": 1,
+        "type": "renegotiation"
+      },
+      {
+        "type": "sni"
+      },
+      {
+        "type": "ems"
+      },
+      {
+        "algorithms": [
+          1027,
+          2052,
+          1025,
+          1283,
+          515,
+          2053,
+          2053,
+          1281,
+          2054,
+          1537,
+          513
+        ],
+        "type": "signature_algorithms"
+      },
+      {
+        "type": "status_request"
+      },
+      {
+        "type": "npn"
+      },
+      {
+        "type": "sct"
+      },
+      {
+        "protocols": [
+          "h2",
+          "h2-16",
+          "h2-15",
+          "h2-14",
+          "spdy/3.1",
+          "spdy/3",
+          "http/1.1"
+        ],
+        "type": "alpn"
+      },
+      {
+        "points": "00",
+        "type": "supported_points"
+      },
+      {
+        "groups": [
+          29,
+          23,
+          24,
+          25
+        ],
+        "type": "supported_groups"
+      }
+    ],
+    "max_vers": 0,
+    "min_vers": 0
+  },
+  "iOS-13": {
+    "cipher_suites": [
+      4865,
+      4866,
+      4867,
+      49196,
+      49195,
+      49188,
+      49187,
+      49162,
+      49161,
+      52393,
+      49200,
+      49199,
+      49192,
+      49191,
+      49172,
+      49171,
+      52392,
+      157,
+      156,
+      61,
+      60,
+      53,
+      47,
+      49160,
+      49170,
+      10
+    ],
+    "compression_methods": [
+      0
+    ],
+    "extensions": [
+      {
+        "mode": 1,
+        "type": "renegotiation"
+      },
+      {
+        "type": "sni"
+      },
+      {
+        "type": "ems"
+      },
+      {
+        "algorithms": [
+          1027,
+          2052,
+          1025,
+          1283,
+          515,
+          2053,
+          2053,
+          1281,
+          2054,
+          1537,
+          513
+        ],
+        "type": "signature_algorithms"
+      },
+      {
+        "type": "status_request"
+      },
+      {
+        "type": "sct"
+      },
+      {
+        "protocols": [
+          "h2",
+          "http/1.1"
+        ],
+        "type": "alpn"
+      },
+      {
+        "points": "00",
+        "type": "supported_points"
+      },
+      {
+        "shares": [
+          {
+            "group": 29,
+            "len": 0
+          }
+        ],
+        "type": "key_share"
+      },
+      {
+        "modes": [
+          1
+        ],
+        "type": "psk_modes"
+      },
+      {
+        "type": "supported_versions",
+        "versions": [
+          772,
+          771,
+          770,
+          769
+        ]
+      },
+      {
+        "groups": [
+          29,
+          23,
+          24,
+          25
+        ],
+        "type": "supported_groups"
+      },
+      {
+        "dynamic": true,
+        "length": 0,
+        "type": "padding"
+      }
+    ],
+    "max_vers": 0,
+    "min_vers": 0
+  }
+}

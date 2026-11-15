@@ -1,0 +1,100 @@
+name: Publish
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "Build only or publish to PyPI"
+        required: true
+        type: choice
+        options: [build-only, publish]
+        default: build-only
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build distributions
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+
+      - name: Install Python
+        run: uv python install 3.13
+
+      - name: Install dependencies
+        run: uv sync --locked --python 3.13
+
+      - name: Verify release tag matches package version
+        if: github.event_name == 'release'
+        run: |
+          uv run --python 3.13 python - <<'PY'
+          import os, tomllib
+          import utls
+          tag = os.environ["GITHUB_REF_NAME"]
+          expected = tag[1:] if tag.startswith("v") else tag
+          version = tomllib.load(open("pyproject.toml", "rb"))["project"]["version"]
+          if version != expected:
+              raise SystemExit(
+                  f"release tag {tag!r} does not match pyproject version {version!r}"
+              )
+          if utls.__version__ != version:
+              raise SystemExit(
+                  f"utls.__version__ {utls.__version__!r} does not match pyproject version {version!r}"
+              )
+          print(f"version OK: {version}")
+          PY
+
+      - name: Run tests
+        run: uv run --python 3.13 python -m unittest discover -s tests -t .
+
+      - name: Build
+        run: uv build
+
+      - name: Upload distributions
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/*
+          if-no-files-found: error
+          retention-days: 14
+
+  publish:
+    name: Publish to PyPI
+    needs: build
+    if: github.event_name == 'release' || inputs.action == 'publish'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: pypi
+      url: https://pypi.org/project/uTLS/
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Download distributions
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: dist/
+          print-hash: true

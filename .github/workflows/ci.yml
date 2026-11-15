@@ -1,0 +1,140 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      run_network_tests:
+        description: "Run optional public-network tests"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Test (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+
+      - name: Install Python
+        run: uv python install ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: uv sync --locked --python ${{ matrix.python-version }}
+
+      - name: Verify lockfile
+        run: uv lock --check
+
+      - name: Run tests with coverage
+        run: |
+          uv run --python ${{ matrix.python-version }} coverage run -m unittest discover -s tests -t .
+          uv run --python ${{ matrix.python-version }} coverage report
+          uv run --python ${{ matrix.python-version }} coverage xml
+
+      - name: Upload coverage
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-${{ matrix.python-version }}
+          path: coverage.xml
+          if-no-files-found: error
+          retention-days: 7
+
+  build:
+    name: Build sdist and wheel
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+
+      - name: Install Python
+        run: uv python install 3.13
+
+      - name: Install dependencies
+        run: uv sync --locked --python 3.13
+
+      - name: Build
+        run: uv build
+
+      - name: Verify wheel contents
+        run: |
+          uv run --python 3.13 python - <<'PY'
+          import glob, zipfile
+          wheel = glob.glob("dist/*.whl")[0]
+          names = zipfile.ZipFile(wheel).namelist()
+          required = [
+              "utls/py.typed",
+              "utls/_public_suffix_list.dat",
+              "utls/spec_json.py",
+              "utls/ct.py",
+              "utls/psl.py",
+          ]
+          missing = [item for item in required if not any(n.endswith(item) for n in names)]
+          if missing:
+              raise SystemExit(f"missing from wheel: {missing}")
+          print(f"wheel OK: {wheel}")
+          PY
+
+      - name: Upload distributions
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/*
+          if-no-files-found: error
+          retention-days: 7
+
+  network:
+    name: Optional network tests
+    if: github.event_name == 'workflow_dispatch' && inputs.run_network_tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+
+      - name: Install Python
+        run: uv python install 3.13
+
+      - name: Install dependencies
+        run: uv sync --locked --python 3.13
+
+      - name: Run network tests
+        env:
+          UTLS_NETWORK_TESTS: "1"
+        run: |
+          uv run --python 3.13 python -m unittest tests.test_network -v
