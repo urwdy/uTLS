@@ -59,6 +59,31 @@ wheel 会包含：
 - `utls/ct.py`
 - `utls/psl.py`
 
+## Git 分支模型
+
+项目采用 git-flow：
+
+- `main`：稳定发布分支
+- `develop`：日常集成分支
+- `feature/*`：功能分支，从 `develop` 切出
+- `release/*`：发布准备分支
+- `hotfix/*`：紧急修复分支，从 `main` 切出
+
+发布流程：
+
+```bash
+git checkout develop
+git checkout -b release/vX.Y.Z
+# 更新版本号、CHANGELOG、验证
+git commit -am "chore(release): vX.Y.Z"
+git checkout main
+git merge --no-ff release/vX.Y.Z
+git tag -a vX.Y.Z -m "Release vX.Y.Z"
+git checkout develop
+git merge --no-ff release/vX.Y.Z
+git branch -d release/vX.Y.Z
+```
+
 ## 工具
 
 - `tools/gen_legacy_presets.py`：生成 `utls/_legacy_presets.py`
