@@ -79,6 +79,16 @@ class EarlyDataTests(unittest.TestCase):
             stderr=cls.stderr_file,
         )
         time.sleep(0.8)
+        if cls.proc.poll() is not None:
+            cls.stderr_file.flush()
+            try:
+                with open(cls.stderr_path, "r", errors="replace") as f:
+                    error = f.read()[-800:]
+            except OSError:
+                error = ""
+            cls.stderr_file.close()
+            shutil.rmtree(cls.tmp, ignore_errors=True)
+            raise unittest.SkipTest(f"OpenSSL s_server did not start: {error}")
 
     @classmethod
     def tearDownClass(cls):
