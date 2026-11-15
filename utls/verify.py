@@ -6,6 +6,8 @@ import datetime
 import hashlib
 import hmac
 import ipaddress
+import os
+import pathlib
 import socket
 import ssl
 import urllib.parse
@@ -77,6 +79,56 @@ class CertificateVerificationError(UTLSError):
     pass
 
 
+def _load_ca_bundle(path) -> list[bytes]:
+    try:
+        data = pathlib.Path(path).read_bytes()
+    except OSError:
+        return []
+    if b"-----BEGIN CERTIFICATE-----" in data:
+        try:
+            return [
+                cert.public_bytes(serialization.Encoding.DER)
+                for cert in x509.load_pem_x509_certificates(data)
+            ]
+        except (ValueError, TypeError):
+            return []
+    try:
+        return [x509.load_der_x509_certificate(data).public_bytes(serialization.Encoding.DER)]
+    except ValueError:
+        return []
+
+
+def _system_ca_paths() -> list[str]:
+    paths: list[str] = []
+    for env_name in ("SSL_CERT_FILE", "REQUESTS_CA_BUNDLE", "CURL_CA_BUNDLE"):
+        value = os.environ.get(env_name)
+        if value:
+            paths.append(value)
+    try:
+        defaults = ssl.get_default_verify_paths()
+        if defaults.cafile:
+            paths.append(defaults.cafile)
+        if defaults.capath:
+            paths.append(defaults.capath)
+    except (AttributeError, OSError):
+        pass
+    paths.extend(
+        [
+            "/etc/ssl/certs/ca-certificates.crt",
+            "/etc/pki/tls/certs/ca-bundle.crt",
+            "/etc/ssl/cert.pem",
+            "/etc/ssl/certs",
+        ]
+    )
+    try:
+        import certifi
+
+        paths.append(certifi.where())
+    except ImportError:
+        pass
+    return paths
+
+
 def load_system_roots() -> list[x509.Certificate]:
     """Best-effort load of the platform trust store."""
     ders: list[bytes] = []
@@ -90,9 +142,27 @@ def load_system_roots() -> list[x509.Certificate]:
         # Linux/macOS: ask OpenSSL for its default CA bundle.
         try:
             ctx = ssl.create_default_context()
+            ctx.load_default_certs()
             ders = ctx.get_ca_certs(binary_form=True)
         except Exception:  # pragma: no cover - platform dependent
             ders = []
+    if not ders:
+        seen_paths = set()
+        for path in _system_ca_paths():
+            if path in seen_paths:
+                continue
+            seen_paths.add(path)
+            if os.path.isdir(path):
+                try:
+                    entries = sorted(pathlib.Path(path).glob("*"))
+                except OSError:
+                    entries = []
+                for entry in entries:
+                    if entry.suffix.lower() not in (".pem", ".crt", ".cer"):
+                        continue
+                    ders.extend(_load_ca_bundle(entry))
+            else:
+                ders.extend(_load_ca_bundle(path))
     roots = []
     seen = set()
     import warnings
